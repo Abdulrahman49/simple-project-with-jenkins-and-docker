@@ -5,6 +5,7 @@ pipeline {
         stage('Testing Environment') {
             steps {
                 dir("server/") {
+                    sh './versiong.sh                  
                     sh 'mvn test -Dtest=ControllerAndServiceSuite'
                     sh 'mvn test -Dtest=IntegrationSuite'
                 }
